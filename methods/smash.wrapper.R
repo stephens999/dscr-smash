@@ -1,7 +1,7 @@
 #define your methods in .R files like this one in the methods subdirectory
 #each method should take arguments input and args, like the example
 #the output should be a list of the appropriate "output" format (defined in the README)
-library(smash)
+
 
 #runs wavelet shrinkage method SMASH and jointly estimates the variance function
 #inputs:
@@ -10,6 +10,6 @@ library(smash)
 #
 #returns the estimated (posterior mean) mean function
 smash.wrapper = function(input,args){
-    mu.est=ashsmooth.gaus(input$x,filter.number=args$filter.number,family=args$family)
+    mu.est=smashr::smash.gaus(input$x,filter.number=args$filter.number,family=args$family)
     return(mu.est)
 }
