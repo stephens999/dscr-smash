@@ -1,6 +1,6 @@
 sourceDir("methods")
 
-
+add_method(dsc_smash, name="ebayesthresh-esta",fn=ebayesthresh.wrapper,args=list(a=NA))
 add_method(dsc_smash, name="ebayesthresh",fn=ebayesthresh.wrapper,args=list())
 add_method(dsc_smash, name="smash.haar",fn=smash.wrapper,args=list(filter.number=1,family="DaubExPhase"))
 

@@ -14,11 +14,13 @@ ebayesthresh.wrapper = function(input, args) {
     args$filter.number = 8
   if (is.null(args$family)) 
     args$family = "DaubLeAsymm"
+  if (is.null(args$a)) # this is the default in ebayesthresh
+    args$a = 0.5
   
   n = length(input$x)
   J = log2(n)
   x.w <- wd(input$x, args$filter.number, args$family, type = "station")
-  x.w <- ebayesthresh.wavelet(x.w, vscale = input$sig.est, prior = "laplace", threshrule = "mean")
+  x.w <- ebayesthresh.wavelet(x.w, a= args$a, vscale = input$sig.est, prior = "laplace", threshrule = "mean")
   mu.est = AvBasis(convert(x.w))
   return(mu.est)
 } 
