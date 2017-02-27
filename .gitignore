@@ -5,4 +5,8 @@ scores/
 logs/
 meta/
 .Rhistory
+notes.txt
+dscr_smash_output.tar.gz
+check_res.R
+scenarios_old.R
 *~
